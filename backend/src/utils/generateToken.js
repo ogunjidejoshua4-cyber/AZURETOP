@@ -6,4 +6,4 @@ const generateToken = (id) => {
   });
 };
 
-model.exports = generateToken; // Wait, let's fix module.exports syntax:
+module.exports = generateToken; // Wait, let's fix module.exports syntax:
