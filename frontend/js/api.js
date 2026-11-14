@@ -1,5 +1,5 @@
 // Base URL for our Node.js / Express backend API
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://voltcart-backend-s41o.onrender.com/api';
 
 // Helper function to get stored JWT token from localStorage
 const getToken = () => localStorage.getItem('token');

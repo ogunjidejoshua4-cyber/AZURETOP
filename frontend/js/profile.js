@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 1. Fetch User Profile
   try {
-    const userRes = await fetch('http://localhost:5000/api/auth/profile', {
+    const userRes = await fetch('https://voltcart-backend-s41o.onrender.com/api/auth/profile', {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     const userData = await userRes.json();
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 2. Fetch Customer Order History
   const ordersContainer = document.getElementById('orders-container');
   try {
-    const ordersRes = await fetch('http://localhost:5000/api/orders/myorders', {
+    const ordersRes = await fetch('https://voltcart-backend-s41o.onrender.com/api/orders/myorders', {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     const orders = await ordersRes.json();

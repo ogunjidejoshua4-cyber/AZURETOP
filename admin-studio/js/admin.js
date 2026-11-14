@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://voltcart-backend-s41o.onrender.com/api';
 
 // Helper to get stored admin token
 const getAdminToken = () => localStorage.getItem('adminToken');
