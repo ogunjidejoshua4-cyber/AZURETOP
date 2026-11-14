@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoltCart — Admin Studio</title>
+  <link rel="stylesheet" href="./css/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Login Overlay (Shown if not logged in as admin) -->
+  <div id="admin-login-modal" style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.8); display: flex; align-items: center; justify-content: center; z-index: 2000;">
+    <div style="background: var(--surface); padding: 2.5rem; border-radius: var(--radius); width: 100%; max-width: 400px; box-shadow: var(--shadow);">
+      <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">Admin Studio</h2>
+      <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.5rem;">Sign in with your administrator account to manage VoltCart.</p>
+      
+      <form id="admin-login-form">
+        <div class="form-group">
+          <label>Admin Email</label>
+          <input type="email" id="admin-email" required placeholder="admin@ecommerce.com">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="admin-password" required placeholder="••••••••">
+        </div>
+        <div id="login-error" style="color: var(--danger); font-size: 0.875rem; margin-bottom: 1rem; display: none;"></div>
+        <button type="submit" class="btn" style="width: 100%;">Sign In to Dashboard</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard Layout -->
+  <div class="admin-layout" id="admin-dashboard" style="display: none;">
+    <!-- Sidebar -->
+    aside class="sidebar">
+      <div>
+        <a href="#" class="sidebar-brand">VoltCart Admin</a>
+        <div class="sidebar-menu">
+          <a href="#" class="sidebar-link active" data-tab="dashboard"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+          <a href="#" class="sidebar-link" data-tab="products"><i class="fa-solid fa-box"></i> Products</a>
+          <a href="#" class="sidebar-link" data-tab="orders"><i class="fa-solid fa-receipt"></i> Orders</a>
+        </div>
+      </div>
+      <div>
+        <button id="admin-logout-btn" class="sidebar-link" style="width: 100%; border: none; background: none; cursor: pointer; color: var(--danger);">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div id="tab-content">
+        <!-- Dynamic views will render here -->
+        <h1 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">Dashboard Overview</h1>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>Total Products</h3>
+            <div class="value" id="stat-products">0</div>
+          </div>
+          <div class="stat-card">
+            <h3>Total Orders</h3>
+            <div class="value" id="stat-orders">0</div>
+          </div>
+          <div class="stat-card">
+            <h3>Total Revenue</h3>
+            <div class="value" id="stat-revenue">$0.00</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./js/admin.js"></script>
+</body>
+</html>

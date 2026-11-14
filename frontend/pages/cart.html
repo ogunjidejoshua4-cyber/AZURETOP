@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart — VoltCart</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">VoltCart</a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="shop.html">Shop</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-icon-btn active" title="Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cart-count">0</span>
+        </a>
+        <a href="login.html" class="user-icon-btn" id="user-account-link" title="Account">
+          <i class="fa-solid fa-user"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Main Content -->
+  <main class="container" style="padding: 3rem 2rem;">
+    <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem;">Your Shopping Cart</h1>
+    <div id="cart-content" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
+      <!-- Dynamically rendered cart items & summary -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: var(--surface); border-top: 1px solid var(--border); padding: 3rem 0; text-align: center; color: var(--text-muted); margin-top: 4rem;">
+    <div class="container">
+      <p>&copy; 2026 VoltCart. Built with Node.js, Express, MongoDB & Vanilla JS.</p>
+    </div>
+  </footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/cart-ui.js"></script>
+</body>
+</html>

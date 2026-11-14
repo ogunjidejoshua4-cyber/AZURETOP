@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In & Register — VoltCart</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">VoltCart</a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="shop.html">Shop</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-icon-btn" title="Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth Container -->
+  <main class="container" style="padding: 4rem 2rem; max-width: 500px;">
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow);">
+      
+      <!-- Tab Switcher -->
+      <div style="display: flex; border-bottom: 1px solid var(--border); margin-bottom: 2rem;">
+        <button id="tab-login-btn" style="flex: 1; padding: 1rem; font-weight: 700; cursor: pointer; color: var(--primary); border-bottom: 2px solid var(--primary); background: none; border-top: none; border-left: none; border-right: none;">Sign In</button>
+        <button id="tab-register-btn" style="flex: 1; padding: 1rem; font-weight: 700; cursor: pointer; color: var(--text-muted); background: none; border: none;">Create Account</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form">
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem;">Email Address</label>
+          <input type="email" id="login-email" required placeholder="you@example.com" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px;">
+        </div>
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem;">Password</label>
+          <input type="password" id="login-password" required placeholder="••••••••" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px;">
+        </div>
+        <div id="login-error" style="color: var(--danger); font-size: 0.875rem; margin-bottom: 1rem; display: none;"></div>
+        <button type="submit" class="btn-primary" style="width: 100%; text-align: center; border: none; cursor: pointer;">Sign In</button>
+      </form>
+
+      <!-- Registration Form (Hidden by default) -->
+      <form id="register-form" style="display: none;">
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem;">Full Name</label>
+          <input type="text" id="register-name" required placeholder="Joshua Ogunjide" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px;">
+        </div>
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem;">Email Address</label>
+          <input type="email" id="register-email" required placeholder="you@example.com" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px;">
+        </div>
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem;">Password (min 6 characters)</label>
+          <input type="password" id="register-password" required minlength="6" placeholder="••••••••" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px;">
+        </div>
+        <div id="register-error" style="color: var(--danger); font-size: 0.875rem; margin-bottom: 1rem; display: none;"></div>
+        <button type="submit" class="btn-primary" style="width: 100%; text-align: center; border: none; cursor: pointer;">Create Account</button>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: var(--surface); border-top: 1px solid var(--border); padding: 3rem 0; text-align: center; color: var(--text-muted); margin-top: 4rem;">
+    <div class="container">
+      <p>&copy; 2026 VoltCart. Built with Node.js, Express, MongoDB & Vanilla JS.</p>
+    </div>
+  </footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>
